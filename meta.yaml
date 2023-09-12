@@ -9,6 +9,7 @@ requirements:
   build:
     - "{{ compiler('c') }}"
     - "{{ compiler('cxx') }}"
+    - "{{ compiler('fortran') }}"
     - cmake
     - ninja
   host:

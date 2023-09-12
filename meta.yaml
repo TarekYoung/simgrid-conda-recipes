@@ -1,0 +1,29 @@
+{% set version = "3.34" %}
+
+package:
+  name: simgrid
+  version: "{{ version }}"
+source:
+  url: https://framagit.org/simgrid/simgrid/-/archive/v{{ version }}/simgrid-v{{ version }}.tar.gz
+requirements:
+  build:
+    - "{{ compiler('c') }}"
+    - "{{ compiler('cxx') }}"
+    - cmake
+    - ninja
+  host:
+    - python
+    - pybind11
+    - libboost
+    - libevent
+    - graphviz
+  run:
+    - libboost
+    - graphviz
+
+test:
+  import:
+    - simgrid
+
+about:
+  home: https://simgrid.org
